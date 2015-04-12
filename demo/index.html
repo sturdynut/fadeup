@@ -2,23 +2,9 @@
 <html>
   <head>
     <script src='jquery.js'></script>
+    <script src='velocity.min.js'></script>
     <script src='../jquery.fadeup.js'></script>
-    <script>
-      $(function() {
-        $('.btn-close').on('click',
-        function() { $('.item').fadeUp(); });
-
-        $('.btn-close-this-1').on('click',
-        function() { $(this).parent().fadeUp(); });
-
-        $('.btn-close-this-2').on('click',
-        function() { $(this).parent().fadeUp(); });
-
-        $('.btn-close-this-3').on('click',
-        function() { $(this).parent().fadeUp(); });
-
-      })
-    </script>
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,400,900' rel='stylesheet' type='text/css'>
     <style>
       html {
         box-sizing: border-box;
@@ -27,44 +13,38 @@
         box-sizing: inherit;
       }
       body {
+        background-color: #333;
         height: 100%;
         width: 100%;
-        background: #000 url('cuteness.jpg') no-repeat;
-        background-size: cover;
         padding: 0;
         margin: 0;
       }
       .container {
-        background-color: #b00;
         color: #fff;
-        padding: 40px;
-        z-index: 1;
-        line-height: 2;
-        overflow: auto;
         height: 100%;
+        position: relative;
         width: 100%;
       }
-      .item {
-        min-height: 100px;
-        background-color: #fff;
-        color: #111;
-        margin: 20px auto 10px auto;
-        border-radius: 3px;
-        padding: 20px;
-        position: relative;
-        border: solid 10px #000;
-        line-height: 3;
+      .main-content {
+        background-color: rgba(255, 255, 255, 0.1);
+        bottom: 0;
+        left: 200px;
+        right: 0;
+        position: absolute;
+        top: 0;
       }
-      .item-alt {
-        min-height: 500px;
-        background-color: #fff;
-        color: #111;
-        margin: 20px auto 10px auto;
-        border-radius: 3px;
-        padding: 2px;
-        position: relative;
-        border: solid 1px #000;
-        line-height: 6;
+      header {
+        background-color: rgba(255, 255, 255, 0.5);
+        bottom: 0;
+        left: 0;
+        right: 200px;
+        position: absolute;
+        top: 0;
+      }
+      h1 {
+        font-family: 'Lato';
+        font-size: 64px;
+        font-weight: 100;
       }
       button {
         cursor: pointer;
@@ -73,9 +53,7 @@
         color: #fff;
         display: block;
         border-style: none;
-        width: 100%;
         outline: none;
-        z-index: 2;
       }
       button:hover,
       button:active {
@@ -85,20 +63,25 @@
   </head>
   <body>
     <div class='container'>
-      Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro.
-      <div class='item'>
-      Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris.
-      <button class='btn-close-this-1'>Fade this</button>
-      </div>
-      <div class='item'>
-      Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris.
-      <button class='btn-close-this-2'>Fade this</button>
-      </div>
-      <div class='item item-alt'>
-      Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris.
-      <button class='btn-close-this-3'>Fade this</button>
+      <header>
+        <h1>FadeUp</h1>
+        <h2><pre>$.fn.slideUp()</pre> with <pre>{ opacity: 0 }</pre></h2>
+        <pre class='javascript'>
+          $('.to-fade').fadeUp();
+        </pre>
+      </header>
+      <div class='main-content'>
+        <div class='to-fade'>
+        </div>
+        <button>Call FadeUp()</button>
       </div>
     </div>
-    <button class='btn-close'>Fade Everything</button>
   </body>
+  <script>
+    $(function() {
+      $('button').on('click',
+        function() { $('.to-fade').fadeUp();
+      });
+    })
+  </script>
 </html>
