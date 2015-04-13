@@ -12,75 +12,122 @@
       *, *:before, *:after {
         box-sizing: inherit;
       }
+      html,
       body {
-        background-color: #333;
         height: 100%;
         width: 100%;
         padding: 0;
         margin: 0;
       }
-      .container {
+      h1, h2 {
+        margin: 0;
+        padding: 0;
+      }
+      h1 {
         color: #fff;
-        height: 100%;
-        position: relative;
-        width: 100%;
+        font-family: 'Lato';
+        font-size: 48px;
+        font-weight: 900;
+        line-height: 57px;
+      }
+      h2 {
+        font-family: 'Lato';
+        font-weight: 100;
+        font-size: 24px;
+        color: #9D2E94;
+        line-height: 29px;
+      }
+      .btn {
+        cursor: pointer;
+        display: block;
+        border-style: none;
+        outline: none;
+        background: #9D2E94;
+        box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.1);
+        font-family: 'Lato';
+        font-size: 14px;
+        font-weight: 100;
+        color: #FFFFFF;
+        line-height: 17px;
+        padding: 13px;
+        width: 130px;
+        border-radius: 0 0 6px 6px;
+        display: block;
+        margin: 0 auto;
+      }
+      .btn:hover,
+      .btn:active {
+        outline: none;
+      }
+      .btn--rounded {
+        border-radius: 6px;
+      }
+      .container {
+        background-color: #571051;
+        bottom: 0;
+        left: 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+      }
+      .header {
+        background: rgba(0, 0, 0, 0.01);
+        box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.1);
+        height: 155px;
+        left: 0;
+        padding: 40px;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+      .header a {
+        position: absolute;
+        right: 40px;
+        top: 50%;
+        transform: translateY(-50%);
       }
       .main-content {
         background-color: rgba(255, 255, 255, 0.1);
         bottom: 0;
-        left: 200px;
-        right: 0;
-        position: absolute;
-        top: 0;
-      }
-      header {
-        background-color: rgba(255, 255, 255, 0.5);
-        bottom: 0;
         left: 0;
-        right: 200px;
+        padding: 20px;
         position: absolute;
-        top: 0;
+        right: 0;
+        top: 155px;
       }
-      h1 {
-        font-family: 'Lato';
-        font-size: 64px;
-        font-weight: 100;
-      }
-      button {
-        cursor: pointer;
-        height: 55px;
-        background-color: #000;
-        color: #fff;
-        display: block;
-        border-style: none;
-        outline: none;
-      }
-      button:hover,
-      button:active {
-        outline: none;
+      .to-fade {
+        background: #9D2E94;
+        box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.50);
+        border-radius: 6px;
+        height: 200px;
       }
     </style>
   </head>
   <body>
     <div class='container'>
-      <header>
-        <h1>FadeUp</h1>
-        <h2><pre>$.fn.slideUp()</pre> with <pre>{ opacity: 0 }</pre></h2>
-        <pre class='javascript'>
-          $('.to-fade').fadeUp();
-        </pre>
+      <header class='header'>
+        <h1>$.fn.fadeup();</h1>
+        <h2>A jQuery plugin</h2>
+        <a href='https://github.com/sturdynut/fadeUp' target='_blank'>
+          <img src='images/github-icon.png' alt='Github Repo' />
+        </a>
       </header>
       <div class='main-content'>
         <div class='to-fade'>
         </div>
-        <button>Call FadeUp()</button>
+        <button class='btn'>Fade Up</button>
       </div>
     </div>
   </body>
   <script>
     $(function() {
       $('button').on('click',
-        function() { $('.to-fade').fadeUp();
+        function() { $('.to-fade').fadeUp(function(collapsed) {
+          console.log(collapsed);
+          $('.btn').removeClass('btn--rounded')
+          if (collapsed === true)
+            $('.btn').addClass('btn--rounded')
+        });
       });
     })
   </script>
