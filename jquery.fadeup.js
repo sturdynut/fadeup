@@ -64,7 +64,8 @@
         }
       }
 
-      // $.fn.fadeUp.beforeAnimate.call($this);
+      $.fn.fadeUp.beforeAnimate.call($this);
+
       $.fn.fadeUp.animate.call($this,
         properties,
         settings.duration,
@@ -76,8 +77,6 @@
             collapsed: collapsed
           });
 
-          // if (collapsed) $this.css('display', 'none')
-          // else this.css('display', data.display);
           $.fn.fadeUp.complete.call($this, callback);
         }
       );
@@ -95,7 +94,7 @@
         collapsed = data.collapsed;
 
     // if (!collapsed) this.data($.fn.fadeUp.dataRoot, data);
-    // if (collapsed) this.css('display', 'none')
+    if (collapsed) this.css('display', 'none')
     if (callback) callback.call(this, collapsed);
   };
   $.fn.fadeUp.beforeAnimate = function () {
@@ -103,24 +102,8 @@
         collapsed = data.collapsed,
         display = data.display;
 
-    data = $.extend(data, {
-      borderBottomWidth: this.css('borderBottomWidth'),
-      borderTopWidth: this.css('borderTopWidth'),
-      display: this.css('display'),
-      height: this.outerHeight(),
-      marginBottom: this.css('marginBottom'),
-      marginTop: this.css('marginTop'),
-      minHeight: this.css('minHeight'),
-      overflow: this.css('overflow'),
-      paddingBottom: this.css('paddingBottom'),
-      paddingTop: this.css('paddingTop')
-    });
-
-    if (collapsed){
+    if (collapsed) {
       this.css('display', display);
-    }
-    else {
-      this.data($.fn.fadeUp.dataRoot, data);
     }
   };
   $.fn.fadeUp.getData = function () {

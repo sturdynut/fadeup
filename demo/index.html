@@ -14,10 +14,12 @@
       }
       html,
       body {
+        background-color: #571051;
+        font-family: 'Lato';
         height: 100%;
-        width: 100%;
-        padding: 0;
         margin: 0;
+        padding: 0;
+        width: 100%;
       }
       h1, h2 {
         margin: 0;
@@ -25,60 +27,55 @@
       }
       h1 {
         color: #fff;
+        display: none;
         font-family: 'Lato';
         font-size: 48px;
         font-weight: 900;
         line-height: 57px;
       }
       h2 {
+        color: #9D2E94;
+        display: none;
         font-family: 'Lato';
         font-weight: 100;
         font-size: 24px;
-        color: #9D2E94;
         line-height: 29px;
       }
       .btn {
+        background: rgba(0, 0, 0, 0.05);
+        box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.1);
+        border-radius: 6px;
+        border-style: none;
+        color: #FFFFFF;
         cursor: pointer;
         display: block;
-        border-style: none;
-        outline: none;
-        background: #9D2E94;
-        box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.1);
-        font-family: 'Lato';
         font-size: 14px;
         font-weight: 100;
-        color: #FFFFFF;
+        left: 50%;
         line-height: 17px;
-        padding: 13px;
-        width: 130px;
-        border-radius: 0 0 6px 6px;
-        display: block;
         margin: 0 auto;
+        outline: none;
+        padding: 0 20px;
+        position: absolute;
+        transition: all 3s;
+        transform: translate(-50%, -50%);
+        top: 50%;
       }
       .btn:hover,
       .btn:active {
+        background: #9D2E94;
         outline: none;
-      }
-      .btn--rounded {
-        border-radius: 6px;
       }
       .container {
         background-color: #571051;
-        bottom: 0;
-        left: 0;
-        position: absolute;
-        top: 0;
-        right: 0;
+        position: relative;
       }
       .header {
-        background: rgba(0, 0, 0, 0.01);
+        background: rgba(0, 0, 0, 0.3);
         box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.1);
         height: 155px;
-        left: 0;
         padding: 40px;
-        position: absolute;
-        right: 0;
-        top: 0;
+        position: relative;
       }
       .header a {
         position: absolute;
@@ -87,19 +84,30 @@
         transform: translateY(-50%);
       }
       .main-content {
-        background-color: rgba(255, 255, 255, 0.1);
-        bottom: 0;
-        left: 0;
         padding: 20px;
-        position: absolute;
-        right: 0;
-        top: 155px;
       }
       .to-fade {
         background: #9D2E94;
         box-shadow: 0px 1px 5px 0px rgba(0,0,0,0.50);
         border-radius: 6px;
-        height: 200px;
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 1.5;
+        margin-top: 20px;
+        min-height: 200px;
+        padding: 20px 40px;
+      }
+      p img {
+        border-radius: 50%;
+        float: left;
+        height: 100px;
+        margin: 0 15px 15px 0;
+        width: 96px;
+      }
+      .cuteness {
+        background-image: url('images/cuteness.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        min-height: 500px;
       }
     </style>
   </head>
@@ -108,19 +116,31 @@
       <header class='header'>
         <h1>$.fn.fadeup();</h1>
         <h2>A jQuery plugin</h2>
+        <button class='btn'><pre>$(...).fadeUp();</pre></button>
         <a href='https://github.com/sturdynut/fadeUp' target='_blank'>
           <img src='images/github-icon.png' alt='Github Repo' />
         </a>
       </header>
       <div class='main-content'>
         <div class='to-fade'>
+          <p>
+            <img src='images/cat-icon.png' />Kitten Ipsum dolor sit amet convallis cat non disapproval, id eget family brought posuere ligula sapien he somebody nunc metus dui skeptical loved siamese rip the couch nisl.
+          </p><p>Venenatis, Baxter congue gravida boy id blandit consectetur  cat mus elit her aggressive. Pillow kitten cat special model she meowschwitz, cute In dog cat ullamcorper aliquam diam sapien euismod vitae heart.
+          </p><p>Venenatis, Baxter congue gravida boy id blandit consectetur  cat mus elit her aggressive. Pillow kitten cat special model she meowschwitz, cute In dog cat ullamcorper aliquam diam sapien euismod vitae heart.
+          </p><p>Venenatis, Baxter congue gravida boy id blandit consectetur  cat mus elit her aggressive. Pillow kitten cat special model she meowschwitz, cute In dog cat ullamcorper aliquam diam sapien euismod vitae heart.
+          </p><p>Venenatis, Baxter congue gravida boy id blandit consectetur  cat mus elit her aggressive. Pillow kitten cat special model she meowschwitz, cute In dog cat ullamcorper aliquam diam sapien euismod vitae heart.
+          </p>
         </div>
-        <button class='btn'>Fade Up</button>
       </div>
     </div>
   </body>
   <script>
     $(function() {
+
+      $('h1').fadeIn(1500, function() {
+        $('h2').fadeIn(2500);
+      });
+
       $('button').on('click',
         function() { $('.to-fade').fadeUp(function(collapsed) {
           console.log(collapsed);
