@@ -1,1 +1,1 @@
-web: cd demo/app.js
+web: demo/app.js
