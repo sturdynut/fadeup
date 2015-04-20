@@ -1,0 +1,47 @@
+{
+  "name": "fadeUp",
+  "title": "Fade Up",
+  "description": "A simple, jQuery plugin for fancy hiding.",
+  "keywords": [
+    "fadeUp",
+    "fade",
+    "show",
+    "hide"
+  ],
+  "version": "0.0.1",
+  "author": {
+    "name": "Matti Salokangas",
+    "email": "matti.salokangas@gmail.com",
+    "url": "https://github.com/sturdynut"
+  },
+  "maintainers": [
+    {
+      "name": "Matti Salokangas",
+      "email": "matti.salokangas@gmail.com",
+      "url": "https://github.com/sturdynut"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://mit-license.org/"
+    }
+  ],
+  "bugs": "https://github.com/sturdynut/fadeUp/issues",
+  "homepage": "https://github.com/sturdynut/fadeUp",
+  "docs": "https://github.com/sturdynut/fadeUp#readme",
+  "download": "https://github.com/sturdynut/fadeUp/archive/master.zip",
+  "main": "dist/fadeUp.js",
+  "private": true,
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-cli": "~0.1.13",
+    "grunt-contrib-copy": "^0.7.0",
+    "grunt-contrib-jshint": "^0.11.0",
+    "grunt-contrib-uglify": "^0.7.0",
+    "grunt-contrib-watch": "^0.6.1"
+  },
+  "scripts": {
+    "test": "grunt travis --verbose"
+  }
+}
