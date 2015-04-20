@@ -2,7 +2,7 @@
   "name": "fadeup-demo",
   "version": "0.0.1",
   "description": "A demo page for FadeUp.",
-  "main": "server.js",
+  "web": "server.js",
   "scripts": {
     "start": "node server.js"
   },
