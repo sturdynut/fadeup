@@ -32,7 +32,9 @@
   "docs": "https://github.com/sturdynut/fadeUp#readme",
   "download": "https://github.com/sturdynut/fadeUp/archive/master.zip",
   "main": "dist/fadeUp.js",
-  "scripts": "node demo/app.js",
+  "scripts": {
+    "start": "node demo/app.js"
+  },
   "private": true,
   "dependencies": {
     "express": "~4.9.x"
