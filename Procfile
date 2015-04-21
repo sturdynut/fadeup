@@ -1,1 +1,1 @@
-web: demo/app.js
+web: node demo/app.js
