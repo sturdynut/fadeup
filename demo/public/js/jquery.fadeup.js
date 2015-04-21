@@ -17,7 +17,7 @@
    *   - beforeAnimate: called before animate.
    *   - getProperties: gets properties for an element.
    * * * * * * * * * * * * * * * * * * * * */
-  window.FadeUp = function(options, callback) {
+  var FadeUp = function(options, callback) {
     callback  = typeof options === 'function' ? options : callback;
     options  = $.extend({}, FadeUp.prototype.defaultSettings, options);
     var duration  = options.duration,
