@@ -43,7 +43,7 @@
             expand: true,
             flatten: true,
             src: ['src/jquery.fadeup.js'],
-            dest: 'demo/js'
+            dest: 'demo/public/js'
           }
         ]
       }

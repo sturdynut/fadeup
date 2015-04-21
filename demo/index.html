@@ -222,9 +222,22 @@
     </footer>
   </body>
   <script>
+    // On document ready
     $(function() {
-      $('.btn-one').on('click', function() { $('.to-fade-one').fadeUp() });
-      $('.btn-all').on('click', function() { $('.to-fade-all').fadeUp() });
+      // Wire up fadeup
+      $('.btn-one').on('click', function() {
+        $('.to-fade-one').fadeUp({
+          duration: 1500
+        })
+      });
+
+      $('.btn-all').on('click', function() {
+        $('.to-fade-all').fadeUp({
+          duration: 1000
+        })
+      });
+
+      // Other things
       $('.btn-all')
         .on('mouseover', function() {
           $('h1').addClass('highlight');

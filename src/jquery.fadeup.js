@@ -17,11 +17,11 @@
    *   - beforeAnimate: called before animate.
    *   - getProperties: gets properties for an element.
    * * * * * * * * * * * * * * * * * * * * */
-  var FadeUp = function(options) {
-    var callback  = typeof options === 'function' ? options : callback,
-        settings  = $.extend({}, FadeUp.prototype.defaultSettings, options),
-        duration  = settings.duration,
-        easing    = settings.easing,
+  window.FadeUp = function(options, callback) {
+    callback  = typeof options === 'function' ? options : callback;
+    options  = $.extend({}, FadeUp.prototype.defaultSettings, options);
+    var duration  = options.duration,
+        easing    = options.easing,
         $this     = $(this);
 
     /* Throttle requests to prevent many queued messages.
@@ -189,7 +189,9 @@
    *     or:  $('.item').fadeUp({ ... }, function(collapsed) { ... });
    * * * * * * * * * * * * * * * * * * * * * */
   $.fn.fadeUp = function(options, callback) {
-    return this.each(FadeUp);
+    return this.each(function(index, item) {
+      FadeUp.call(item, options, callback);
+    });
   };
   // Overridables
   $.fn.fadeUp.animate = $.fn.velocity ? $.fn.velocity : $.fn.animate;
