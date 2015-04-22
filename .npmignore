@@ -1,0 +1,12 @@
+/src
+node_modules
+demo
+CONTRIBUTING.md
+Gruntfile.js
+bower.json
+app.js
+npm-debug.log
+Procfile
+.jshintrc
+.npmignore
+.slugignore
