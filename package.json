@@ -39,7 +39,7 @@
     "node": "0.12.2"
   },
   "dependencies": {
-    "express": "~4.9.x",
+    "express": "~4.9.x"
   },
   "devDependencies": {
     "grunt": "^0.4.5",
