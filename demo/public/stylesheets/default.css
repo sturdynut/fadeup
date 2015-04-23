@@ -22,6 +22,7 @@ html,
 body {
   background-color: #5aa5ec;
   font-family: 'Lato';
+  font-weight: 100;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -87,6 +88,7 @@ pre {
   color: #fff;
   cursor: pointer;
   display: inline-block;
+  font-family: 'Lato';
   font-size: 18px;
   font-weight: 100;
   margin: 0 auto;
@@ -148,6 +150,7 @@ pre {
 .to-fade-one {
   left: 0;
   height: 861px;
+  padding-top: 40px;
   position: absolute;
   text-align: center;
   top: 0;
@@ -172,7 +175,7 @@ pre {
 .to-fade-all {
   list-style: none;
   margin: 0;
-  padding: 20px 40px;
+  padding: 25px 40px;
 }
 .to-fade img {
   border-radius: 50%;
