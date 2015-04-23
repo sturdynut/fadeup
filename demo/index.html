@@ -4,7 +4,7 @@
     <script src='js/jquery.js'></script>
     <script src='js/velocity.min.js'></script>
     <script src='js/jquery.fadeup.js'></script>
-    <link href='http://fonts.googleapis.com/css?family=Poiret+One|Lato:100,400,900' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Merriweather:900italic,300italic|Lato:100,400,900' rel='stylesheet' type='text/css'>
     <link href='stylesheets/default.css' type='text/css' rel='stylesheet'>
   </head>
   <body>
@@ -12,10 +12,31 @@
       <header class='header'>
         <h1>$.fn.fadeup();</h1>
         <h2>A simple, jQuery plugin for fancy hiding.</h2>
+        <ul class='sharing'>
+          <li><iframe src="https://ghbtns.com/github-btn.html?user=sturdynut&type=follow&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
+          </li><li><iframe src="https://ghbtns.com/github-btn.html?user=sturdynut&repo=fadeup&type=star&count=true" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+          </li>
+        </ul>
       </header>
       <div class='btns'>
         <button class='btn btn-one'>Fade One</button>
         <button class='btn btn-all'>Fade All</button>
+        <ul class='code'>
+          <li>
+            <pre>$('.to-fade-one').fadeUp({
+  duration: 500,
+  easing: 'swing'
+});
+            </pre>
+          </li>
+          <li>
+            <pre>$('.to-fade-all').fadeUp({
+  duration: 700,
+  easing: 'linear'
+});
+            </pre>
+          </li>
+        </ul>
       </div>
       <div class='main-content'>
         <div class='to-fade to-fade-one'>
@@ -24,32 +45,28 @@
           </p><p>Venenatis, Baxter congue gravida boy id blandit consectetur  cat mus elit her aggressive. Pillow kitten cat special model she meowschwitz, cute In dog cat ullamcorper aliquam diam sapien euismod vitae heart.
           </p>
         </div>
-        <div class='to-fade-all-list'>
-          <div class='to-fade to-fade-all'>
+        <ul class='to-fade-all-list'>
+          <li class='to-fade to-fade-all'>
             <p>
               <img src='images/cat-icon.png' />Kitten Ipsum dolor sit amet convallis cat non disapproval, id eget family brought posuere ligula sapien he somebody nunc metus dui skeptical loved siamese rip the couch nisl.
-            </p><p>Venenatis, Baxter congue gravida boy id blandit consectetur  cat mus elit her aggressive. Pillow kitten cat special model she meowschwitz, cute In dog cat ullamcorper aliquam diam sapien euismod vitae heart.
             </p>
-          </div>
-          <div class='to-fade to-fade-all'>
+          </li>
+          <li class='to-fade to-fade-all'>
             <p>
               <img src='images/cat-icon.png' />Kitten Ipsum dolor sit amet convallis cat non disapproval, id eget family brought posuere ligula sapien he somebody nunc metus dui skeptical loved siamese rip the couch nisl.
-            </p><p>Venenatis, Baxter congue gravida boy id blandit consectetur  cat mus elit her aggressive. Pillow kitten cat special model she meowschwitz, cute In dog cat ullamcorper aliquam diam sapien euismod vitae heart.
             </p>
-          </div>
-          <div class='to-fade to-fade-all'>
+          </li>
+          <li class='to-fade to-fade-all'>
             <p>
               <img src='images/cat-icon.png' />Kitten Ipsum dolor sit amet convallis cat non disapproval, id eget family brought posuere ligula sapien he somebody nunc metus dui skeptical loved siamese rip the couch nisl.
-            </p><p>Venenatis, Baxter congue gravida boy id blandit consectetur  cat mus elit her aggressive. Pillow kitten cat special model she meowschwitz, cute In dog cat ullamcorper aliquam diam sapien euismod vitae heart.
             </p>
-          </div>
-          <div class='to-fade to-fade-all'>
+          </li>
+          <li class='to-fade to-fade-all'>
             <p>
               <img src='images/cat-icon.png' />Kitten Ipsum dolor sit amet convallis cat non disapproval, id eget family brought posuere ligula sapien he somebody nunc metus dui skeptical loved siamese rip the couch nisl.
-            </p><p>Venenatis, Baxter congue gravida boy id blandit consectetur  cat mus elit her aggressive. Pillow kitten cat special model she meowschwitz, cute In dog cat ullamcorper aliquam diam sapien euismod vitae heart.
             </p>
-          </div>
-        </div>
+          </li>
+        </ul>
       </div>
     </div>
     <footer class='footer'>
@@ -65,35 +82,25 @@
       // Wire up fadeup
       $('.btn-one').on('click', function() {
         $('.to-fade-one').fadeUp({
-          duration: 500
-        })
+          duration: 500,
+          easing: 'swing'
+        });
       });
 
       $('.btn-all').on('click', function() {
         $('.to-fade-all').fadeUp({
-          duration: 500
-        })
+          duration: 700,
+          easing: 'linear'
+        });
       });
 
       // Other things
       $('.btn-all')
-        .on('mouseover', function() {
-          $('h1').addClass('highlight');
-          $('.to-fade-all').addClass('highlight');
-        })
-        .on('mouseout', function() {
-          $('h1').removeClass('highlight');
-          $('.to-fade-all').removeClass('highlight');
-        });
+        .on('mouseover', function() { $('.to-fade-all').addClass('highlight'); })
+        .on('mouseout', function() { $('.to-fade-all').removeClass('highlight'); });
       $('.btn-one')
-        .on('mouseover', function() {
-          $('h1').addClass('highlight');
-          $('.to-fade-one').addClass('highlight');
-        })
-        .on('mouseout', function() {
-          $('h1').removeClass('highlight');
-          $('.to-fade-one').removeClass('highlight');
-        });
+        .on('mouseover', function() { $('.to-fade-one').addClass('highlight'); })
+        .on('mouseout', function() { $('.to-fade-one').removeClass('highlight'); });
     })
   </script>
 </html>
