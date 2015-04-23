@@ -14,6 +14,7 @@ html {
 }
 html,
 body {
+  background-color: #5aa5ec;
   font-family: 'Lato';
   height: 100%;
   margin: 0;
@@ -21,12 +22,13 @@ body {
   width: 100%;
 }
 h1, h2 {
+  color: #fff;
+  font-family: 'Poiret One';
   margin: 0;
   padding: 0;
 }
 h1 {
-  color: #1f7892;
-  font-family: 'Lato';
+  /*color: #1f7892;*/
   font-size: 80px;
   margin: 60px auto 10px auto;
   opacity: 1;
@@ -36,11 +38,10 @@ h1 {
   animation: animateOpacity 3s 1 ease;
 }
 h1.highlight {
-  color: #9D2E94;
+  color: #ec8a5a;
 }
 h2 {
-  color: #1f7892;
-  font-family: 'Lato';
+  /*color: #1f7892;*/
   font-weight: 100;
   font-size: 30px;
   margin: 0 auto 50px auto;
@@ -53,8 +54,8 @@ h2 {
   text-align: center;
 }
 .btn {
-  background: #1f7892;
-  box-shadow: 0px 3px 2px 0px rgba(0,0,0,0.1);
+  background: #ecc85a;
+  box-shadow: 0px 3px 0px 3px rgba(0,0,0,0.2);
   border-radius: 6px;
   border-style: none;
   color: #fff;
@@ -68,10 +69,20 @@ h2 {
   -webkit-transition: all 3s;
   transition: all 3s;
 }
+.btn-one {
+  border-radius: 6px 0 0 6px;
+}
+.btn-all {
+  border-radius: 0 6px 6px 0;
+}
 .btn:hover,
 .btn:active {
-  background: #9D2E94;
+  background: #ec8a5a;
+  box-shadow: 0px 3px 0px 3px rgba(0,0,0,0.4);
   outline: none;
+}
+.btn:active {
+  box-shadow: inset 0px 3px 0px 3px rgba(0,0,0,0.4);
 }
 .container {
   position: relative;
@@ -84,7 +95,7 @@ h2 {
   position: relative;
 }
 .to-fade {
-  background: #408091;
+  background: #ecc85a;
   border-radius: 3px;
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
   color: #fff;
@@ -103,7 +114,7 @@ h2 {
   width: 260px;
 }
 .to-fade-one.highlight {
-  background: #9D2E94;
+  background: #ec8a5a;
 }
 .to-fade-all-list {
   bottom: 0;
@@ -113,7 +124,7 @@ h2 {
   top: 0;
 }
 .to-fade-all.highlight {
-  background: #9D2E94;
+  background: #ec8a5a;
 }
 .to-fade-all {
   padding: 20px 40px;
