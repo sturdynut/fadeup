@@ -28,25 +28,23 @@ body {
   padding: 0;
   width: 100%;
 }
-h1, h2 {
+h1 {
   color: #fff;
   font-family: 'Merriweather';
-  font-style: italic;
-  margin: 0;
-  padding: 0;
-}
-h1 {
   font-size: 90px;
+  font-style: italic;
   font-weight: 900;
   letter-spacing: -7px;
-  margin: 60px auto 10px auto;
+  margin: 60px auto 20px auto;
   opacity: 1;
+  padding: 0;
   -webkit-transition: all 6s;
   transition: all 6s;
   -webkit-animation: animateOpacity 6s 1 ease;
   animation: animateOpacity 6s 1 ease;
 }
 h2 {
+  color: #fff;
   font-weight: 300;
   font-size: 25px;
   margin: 0 auto 30px auto;
@@ -56,10 +54,25 @@ h2 {
   -webkit-animation: animateOpacity 12s 1 ease;
   animation: animateOpacity 12s 1 ease;
 }
+h3 {
+  color: #fff;
+  font-weight: 100;
+  font-size: 45px;
+  margin: 0 auto;
+  opacity: 1;
+  -webkit-transition: all 12s;
+  transition: all 12s;
+  -webkit-animation: animateOpacity 12s 1 ease;
+  animation: animateOpacity 12s 1 ease;
+}
 pre {
-  padding: 20px 10px;
+  color: #fff;
+  font-size: 14px;
+  padding: 15px 15px 3px 15px;
   text-align: left;
   white-space: pre-wrap;
+  background: #000;
+  margin: 0;
 }
 .code {
   border-radius: 3px;
@@ -76,42 +89,30 @@ pre {
   padding: 0;
   width: 225px;
 }
-.btns {
-  padding-bottom: 10px;
-  text-align: center;
-}
 .btn {
   background: rgba(255,255,255,.2);
-  box-shadow: 0px 3px 0px 3px rgba(0,0,0,0.2);
-  border-radius: 6px;
+  box-shadow: 3px rgba(0,0,0,0.2);
   border-style: none;
   color: #fff;
   cursor: pointer;
   display: inline-block;
   font-family: 'Lato';
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 100;
   margin: 0 auto;
   outline: none;
   padding: 20px 0;
-  -webkit-transition: all 3s;
-  transition: all 3s;
-  width: 225px;
+  -webkit-transition: all 0.05s;
+  transition: all 0.05s;
+  width: 100%;
 }
-.btn-one {
-  border-radius: 6px 0 0 6px;
-}
-.btn-all {
-  border-radius: 0 6px 6px 0;
-}
-.btn:hover,
-.btn:active {
+.btn:active,
+.btn:hover {
   background: #ec8a5a;
-  box-shadow: 0px 3px 0px 3px rgba(0,0,0,0.4);
   outline: none;
 }
 .btn:active {
-  box-shadow: inset 0px 3px 0px 3px rgba(0,0,0,0.4);
+  background: #ecc85a;
 }
 .container {
   height: 100%;
@@ -120,79 +121,47 @@ pre {
 .header {
   text-align: center;
 }
-.sharing {
-  margin: 0 auto 20px auto;
-  overflow: hidden;
-  width: 380px;
-}
-.sharing li {
-  float: left;
-  list-style: none;
-  margin: 0 5px 0 0;
-  padding: 0;
-}
 .main-content {
   background: rgba(255,255,255,.2);
   height: 100%;
   overflow: hidden;
-  padding-bottom: 60px;
   position: relative;
 }
-.to-fade {
-  color: #fff;
-  line-height: 1.5;
-  margin-bottom: 20px;
-  padding: 20px;
-  position: relative;
-  -webkit-transition: background 3s;
-  transition: background 3s;
+.demo-1-to-fade,
+.demo-1-section {
+  height: 100%;
 }
-.to-fade-one {
+.demo-button {
+  height: 150px;
   left: 0;
-  height: 861px;
-  padding-top: 40px;
   position: absolute;
-  text-align: center;
   top: 0;
-  width: 33.3333333333%;
+  width: 350px;
 }
-.to-fade-one.highlight {
-  background: #ec8a5a;
+.demo-content {
+  height: 100%;
+  margin-left: 350px;
 }
-.to-fade-all-list {
-  bottom: 0;
-  left: 33.3333333333%;
-  margin: 0;
-  padding: 0;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 66.666666666%;
+@media (max-width: 600px) {
+  .demo-button {
+    height: auto;
+    position: static;
+    width: 100%;
+  }
+  .demo-content {
+    margin-left: 0;
+  }
 }
-.to-fade-all.highlight {
-  background: #ec8a5a;
+.demo-content h1,
+.demo-content h2,
+.demo-content p {
+  color: #111;
+  margin-bottom: 10px;
+  margin-top: 0;
 }
-.to-fade-all {
-  list-style: none;
-  margin: 0;
-  padding: 25px 40px;
-}
-.to-fade img {
-  border-radius: 50%;
-  height: 180px;
-  width: 180px;
-}
-.to-fade-all img {
-  left: 20px;
-  height: 100px;
-  position: absolute;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  width: 96px;
-}
-.to-fade-all p {
-  padding-left: 116px;
+.demo-content h1 {
+  font-size: 45px;
+  letter-spacing: normal;
 }
 .footer {
   background-color: #fff;
@@ -216,13 +185,23 @@ pre {
   color: #111;
   text-decoration: none;
 }
-.footer .repo {
+.repo {
   position: absolute;
   right: 20px;
   top: 50%;
   -webkit-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+.github-star {
+  position: absolute;
+  right: -35px;
+  top: 9px;
+}
 .footer .repo img {
   width: 25px;
+}
+.demo-1-to-fade {
+  background: url('/images/whistler.jpg') no-repeat center left;
+  background-size: cover;
+  padding: 40px;
 }

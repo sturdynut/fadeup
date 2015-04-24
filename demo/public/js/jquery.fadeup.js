@@ -8,8 +8,16 @@
  * Licensed under the MIT license:
  * http://www.opensource.org/licenses/MIT
  * * * * * * * * * * * * * * * * * * * * * */
-
-(function($) {
+(function (factory) {
+  if (typeof exports === 'object') {
+    module.exports = factory(require('jquery'));
+  } else if (typeof define === 'function' && define.amd) {
+    define(['jquery'], factory);
+  } else {
+    factory(jQuery);
+  }
+}(function ($) {
+  "use strict";
    /* * * * * * * * * * * * * * * * * * * * *
    *  FadeUp Prototype
    *   - defaultSettings: gets default settings.
@@ -18,11 +26,11 @@
    *   - getProperties: gets properties for an element.
    * * * * * * * * * * * * * * * * * * * * */
   var FadeUp = function(options, callback) {
-    callback  = typeof options === 'function' ? options : callback;
-    options  = $.extend({}, FadeUp.prototype.defaultSettings, options);
-    var duration  = options.duration,
-        easing    = options.easing,
-        $this     = $(this);
+    callback = typeof options === 'function' ? options : callback;
+    options = $.extend({}, FadeUp.prototype.defaultSettings, options);
+    var duration = options.duration,
+        easing = options.easing,
+        $this = $(this);
 
     /* Throttle requests to prevent many queued messages.
     * * * * * * * * * * * * * * * * * * * * */
@@ -38,9 +46,9 @@
     * * * * * * * * * * * * * * * * * * * * */
     var properties = FadeUp.prototype._properties.call(this)
       , onComplete = function() {
-                       data = FadeUp.prototype.getProperties.call(this);
-                       data.collapsed = !data.collapsed;
-                       $this.data($.fn.fadeUp.dataNamespace, data);
+                       var elementProperties = FadeUp.prototype.getProperties.call(this);
+                       elementProperties.collapsed = !elementProperties.collapsed;
+                       $this.data($.fn.fadeUp.dataNamespace, elementProperties);
 
                        FadeUp.prototype.complete.call($this, callback);
                      };
@@ -71,8 +79,8 @@
    *  - Calls callback if provided.
    * * * * * * * * * * * * * * * * * * * * */
   FadeUp.prototype.complete = function(callback) {
-    var data      = FadeUp.prototype.getProperties.call(this),
-        collapsed = data.collapsed;
+    var elementProperties = FadeUp.prototype.getProperties.call(this),
+        collapsed = elementProperties.collapsed;
 
     if (collapsed) {
       this.css('display', 'none');
@@ -91,9 +99,9 @@
    *  - Resets the elements display from 'none'.
    * * * * * * * * * * * * * * * * * * * * */
   FadeUp.prototype.beforeAnimate = function() {
-    var data      = this.data($.fn.fadeUp.dataNamespace),
-        collapsed = data.collapsed,
-        display   = data.display;
+    var elementProperties = this.data($.fn.fadeUp.dataNamespace),
+        collapsed = elementProperties.collapsed,
+        display = elementProperties.display;
 
     if (collapsed){
       this.css('display', display);
@@ -106,14 +114,14 @@
    * * * * * * * * * * * * * * * * * * * * */
   FadeUp.prototype.getProperties = function() {
     var $this = $(this),
-        data  = $this.data($.fn.fadeUp.dataNamespace);
+        elementProperties  = $this.data($.fn.fadeUp.dataNamespace);
 
-    if (typeof data !== 'object') {
-      data = FadeUp.prototype._setProperties.call(this, $this);
-      $this.data($.fn.fadeUp.dataNamespace, data);
+    if (typeof elementProperties !== 'object') {
+      elementProperties = FadeUp.prototype._setProperties.call(this, $this);
+      $this.data($.fn.fadeUp.dataNamespace, elementProperties);
     }
 
-    return data;
+    return elementProperties;
   };
 
   /* Private
@@ -174,10 +182,10 @@
   };
   FadeUp.prototype._properties = function() {
     var $this = $(this),
-        data = FadeUp.prototype.getProperties.call(this);
+        elementProperties = FadeUp.prototype.getProperties.call(this);
 
-    return data.collapsed ?
-      FadeUp.prototype._setProperties(data) :
+    return elementProperties.collapsed ?
+      FadeUp.prototype._setProperties(elementProperties) :
       FadeUp.prototype._defaultProperties;
   };
 
@@ -197,4 +205,4 @@
   $.fn.fadeUp.animate = $.fn.velocity ? $.fn.velocity : $.fn.animate;
   $.fn.fadeUp.dataNamespace = 'fadeUp';
 
-})(jQuery);
+}));

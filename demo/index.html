@@ -10,67 +10,38 @@
   <body>
     <div class='container'>
       <header class='header'>
-        <h1>$.fn.fadeup();</h1>
+        <h1>fadeup</h1>
         <h2>A simple, jQuery plugin for fancy hiding.</h2>
-        <ul class='sharing'>
-          <li><iframe src="https://ghbtns.com/github-btn.html?user=sturdynut&type=follow&count=true" frameborder="0" scrolling="0" width="170px" height="20px"></iframe>
-          </li><li><iframe src="https://ghbtns.com/github-btn.html?user=sturdynut&repo=fadeup&type=star&count=true" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
-          </li>
-        </ul>
       </header>
-      <div class='btns'>
-        <button class='btn btn-one'>Fade One</button>
-        <button class='btn btn-all'>Fade All</button>
-        <ul class='code'>
-          <li>
-            <pre>$('.to-fade-one').fadeUp({
-  duration: 500,
-  easing: 'swing'
-});
-            </pre>
-          </li>
-          <li>
-            <pre>$('.to-fade-all').fadeUp({
-  duration: 700,
-  easing: 'linear'
-});
-            </pre>
-          </li>
-        </ul>
-      </div>
       <div class='main-content'>
-        <div class='to-fade to-fade-one'>
-          <img src='images/cuteness.jpg' />
-          <p>Kitten Ipsum dolor sit amet convallis cat non disapproval, id eget family brought posuere ligula sapien he somebody nunc metus dui skeptical loved siamese rip the couch nisl.
-          </p><p>Venenatis, Baxter congue gravida boy id blandit consectetur  cat mus elit her aggressive. Pillow kitten cat special model she meowschwitz, cute In dog cat ullamcorper aliquam diam sapien euismod vitae heart.
-          </p>
-        </div>
-        <ul class='to-fade-all-list'>
-          <li class='to-fade to-fade-all'>
-            <p>
-              <img src='images/cat-icon.png' />Kitten Ipsum dolor sit amet convallis cat non disapproval, id eget family brought posuere ligula sapien he somebody nunc metus dui skeptical loved siamese rip the couch nisl.
-            </p>
-          </li>
-          <li class='to-fade to-fade-all'>
-            <p>
-              <img src='images/cat-icon.png' />Kitten Ipsum dolor sit amet convallis cat non disapproval, id eget family brought posuere ligula sapien he somebody nunc metus dui skeptical loved siamese rip the couch nisl.
-            </p>
-          </li>
-          <li class='to-fade to-fade-all'>
-            <p>
-              <img src='images/cat-icon.png' />Kitten Ipsum dolor sit amet convallis cat non disapproval, id eget family brought posuere ligula sapien he somebody nunc metus dui skeptical loved siamese rip the couch nisl.
-            </p>
-          </li>
-          <li class='to-fade to-fade-all'>
-            <p>
-              <img src='images/cat-icon.png' />Kitten Ipsum dolor sit amet convallis cat non disapproval, id eget family brought posuere ligula sapien he somebody nunc metus dui skeptical loved siamese rip the couch nisl.
-            </p>
-          </li>
-        </ul>
+        <section class='demo-1-section'>
+          <div class='demo-button'>
+            <button type='button' class='btn demo-1'>
+              DEMO
+            </button>
+            <pre>$('.demo-1').on('click', function() {
+  $('.demo-1-to-fade').fadeUp({
+    duration: 500,
+    easing: 'swing'
+  });
+});
+            </pre>
+          </div>
+          <div class='demo-content'>
+            <div class='demo-1-to-fade'>
+              <h1>Kitten Ipsum dolor sit amet convallis cat non disapproval.</h1>
+              <h2>Kitten eget family brought posuere ligula sapien he somebody nunc metus dui skeptical loved siamese rip the couch nisl.</h2>
+              <p>Kitten Ipsum dolor sit amet convallis cat non disapproval, id eget family brought posuere ligula sapien he somebody nunc metus dui skeptical loved siamese rip the couch nisl.</p>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
     <footer class='footer'>
       Handcrafted in Southern Oregon by <a href='https://twitter.com/sturdynut' target='_blank'>@sturdynut</a>, 2015.
+      <div class='github-star'>
+        <iframe src="https://ghbtns.com/github-btn.html?user=sturdynut&repo=fadeup&type=star&count=true" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+      </div>
       <a class='repo' href='https://github.com/sturdynut/fadeUp' target='_blank'>
         <img src='images/github-icon.png' alt='Github Repo' />
       </a>
@@ -80,27 +51,12 @@
     // On document ready
     $(function() {
       // Wire up fadeup
-      $('.btn-one').on('click', function() {
-        $('.to-fade-one').fadeUp({
+      $('.demo-1').on('click', function() {
+        $('.demo-1-to-fade').fadeUp({
           duration: 500,
           easing: 'swing'
         });
       });
-
-      $('.btn-all').on('click', function() {
-        $('.to-fade-all').fadeUp({
-          duration: 700,
-          easing: 'linear'
-        });
-      });
-
-      // Other things
-      $('.btn-all')
-        .on('mouseover', function() { $('.to-fade-all').addClass('highlight'); })
-        .on('mouseout', function() { $('.to-fade-all').removeClass('highlight'); });
-      $('.btn-one')
-        .on('mouseover', function() { $('.to-fade-one').addClass('highlight'); })
-        .on('mouseout', function() { $('.to-fade-one').removeClass('highlight'); });
     })
   </script>
 </html>
