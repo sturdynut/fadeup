@@ -1,10 +1,10 @@
 # FadeUp
 A simple, jQuery plugin for fancy hiding.
 
-# Demo
+## Demo
 [Live demo here](http://fadeup.herokuapp.com/)
 
-# Usage
+## Usage
 
     $(...).fadeUp();
 
@@ -23,7 +23,7 @@ A simple, jQuery plugin for fancy hiding.
       // Do things
     });
 
-# Example
+### Example
     <button type='button' class='btn'>Go</button>
     <div class='content'>
       ...
@@ -37,7 +37,7 @@ A simple, jQuery plugin for fancy hiding.
       });
     </script>
 
-# Install
+## Install
 Install via bower, npm or copy from the `dist` directory.
 
 ### Bower:
