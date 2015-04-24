@@ -16,5 +16,18 @@
     "show",
     "hide"
   ],
+  "ignore": [
+    "/src",
+    "node_modules",
+    "demo",
+    "CONTRIBUTING.md",
+    "Gruntfile.js",
+    "app.js",
+    "npm-debug.log",
+    "Procfile",
+    ".jshintrc",
+    ".npmignore",
+    ".slugignore"
+  ],
   "license": "MIT"
 }
