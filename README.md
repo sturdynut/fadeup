@@ -46,7 +46,7 @@ Install via bower, npm or copy from the `dist` directory.
 
 ### NPM:
 
-    npm install fadeup --save-dev
+    npm install fadeup
 
 ### Copy / Pasta:
 
