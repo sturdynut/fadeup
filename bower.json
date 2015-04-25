@@ -6,28 +6,29 @@
     "Matti Salokangas <matti.salokangas@gmail.com>"
   ],
   "description": "A simple, jQuery plugin for fancy hiding.",
-  "main": "dist/fadeUp.js",
+  "main": "dist/jquery.fadeup.js",
   "keywords": [
     "jquery",
     "plugin",
     "jquery-plugin",
-    "fadeUp",
+    "fadeup",
     "fade",
     "show",
     "hide"
   ],
   "ignore": [
-    "/src",
-    "node_modules",
-    "demo",
-    "CONTRIBUTING.md",
-    "Gruntfile.js",
-    "app.js",
-    "npm-debug.log",
-    "Procfile",
+    "./src",
+    "./node_modules",
+    "./demo",
     ".jshintrc",
     ".npmignore",
-    ".slugignore"
+    ".slugignore",
+    "app.js",
+    "CONTRIBUTING.md",
+    "Gruntfile.js",
+    "npm-debug.log",
+    "package.json",
+    "Procfile"
   ],
   "license": "MIT"
 }
