@@ -1,10 +1,10 @@
 /* * * * * * * * * * * * * * * * * * * * * *
- * jQuery FadeUp Plugin 0.0.1
+ * Fadeup v.1.0.0
+ * A simple, jQuery plugin for fancy hiding.
+ *
  * https://github.com/sturdynut/fadeup
  *
  * Copyright 2015, Matti Salokangas
- * https://github.com/sturdynut
- *
  * Licensed under the MIT license:
  * http://www.opensource.org/licenses/MIT
  * * * * * * * * * * * * * * * * * * * * * */
@@ -26,12 +26,6 @@
    *   - getProperties: gets properties for an element.
    * * * * * * * * * * * * * * * * * * * * */
   var FadeUp = function(options, callback) {
-    callback = typeof options === 'function' ? options : callback;
-    options = $.extend({}, FadeUp.prototype.defaultSettings, options);
-    var duration = options.duration,
-        easing = options.easing,
-        $this = $(this);
-
     /* Throttle requests to prevent many queued messages.
     * * * * * * * * * * * * * * * * * * * * */
     if (FadeUp.prototype._locked.call(this) === true) {
@@ -42,16 +36,18 @@
     * * * * * * * * * * * * * * * * * * * * */
     FadeUp.prototype._lock.call(this);
 
-    /* animate() properties and onComplete.
-    * * * * * * * * * * * * * * * * * * * * */
-    var properties = FadeUp.prototype._properties.call(this)
-      , onComplete = function() {
-                       var elementProperties = FadeUp.prototype.getProperties.call(this);
-                       elementProperties.collapsed = !elementProperties.collapsed;
-                       $this.data($.fn.fadeUp.dataNamespace, elementProperties);
+    var $this = $(this),
+        properties = FadeUp.prototype._properties.call(this);
 
-                       FadeUp.prototype.complete.call($this, callback);
-                     };
+    callback = typeof options === 'function' ? options : callback;
+    options = $.extend({}, FadeUp.prototype.defaultSettings, options);
+    options.complete = function() {
+                         var elementProperties = FadeUp.prototype.getProperties.call(this);
+                         elementProperties.collapsed = !elementProperties.collapsed;
+                         $this.data($.fn.fadeUp.dataNamespace, elementProperties);
+
+                         FadeUp.prototype.complete.call($this, callback);
+                       };
 
     /* Before animate()
     * * * * * * * * * * * * * * * * * * * * */
@@ -59,19 +55,14 @@
 
     /* Calling animate()
     * * * * * * * * * * * * * * * * * * * * */
-    $.fn.fadeUp.animate.call($this,
-      properties,
-      duration,
-      easing,
-      onComplete
-    );
+    $.fn.fadeUp.animate.call($this, properties, options);
   };
 
   /* defaultSettings
     * * * * * * * * * * * * * * * * * * * * */
   FadeUp.prototype.defaultSettings = {
-    duration: 650,
-    easing: 'easeOutCubic'
+    duration: 400,
+    easing: 'swing'
   };
 
   /* complete

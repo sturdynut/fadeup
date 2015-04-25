@@ -10,7 +10,7 @@
   <body>
     <div class='container'>
       <header class='header'>
-        <h1>fadeup</h1>
+        <a class='page-title-link' href='https://github.com/sturdynut/fadeUp' target='_blank'><h1>fadeup</h1></a>
         <h2>A simple, jQuery plugin for fancy hiding.</h2>
       </header>
       <div class='main-content'>
@@ -19,9 +19,14 @@
             <button type='button' class='btn demo-1'>
               DEMO
             </button>
-            <pre>$('.demo-1').on('click', function() {
+            <pre>
+/* * * * * * * * * * * * * * * * *
+ * On click of demo button,
+ * fade up the content.
+ * * * * * * * * * * * * * * * * */
+$('.demo-1').on('click', function() {
   $('.demo-1-to-fade').fadeUp({
-    duration: 500,
+    duration: 400,
     easing: 'swing'
   });
 });
@@ -31,7 +36,8 @@
             <div class='demo-1-to-fade'>
               <h1>Kitten Ipsum dolor sit amet convallis cat non disapproval.</h1>
               <h2>Kitten eget family brought posuere ligula sapien he somebody nunc metus dui skeptical loved siamese rip the couch nisl.</h2>
-              <p>Kitten Ipsum dolor sit amet convallis cat non disapproval, id eget family brought posuere ligula sapien he somebody nunc metus dui skeptical loved siamese rip the couch nisl.</p>
+              <p>
+              <img src='images/cat-icon.png' alt='Kitten' />Kitten Ipsum dolor sit amet convallis cat non disapproval, id eget family brought posuere ligula sapien he somebody nunc metus dui skeptical loved siamese rip the couch nisl.<br />Kitten Ipsum dolor sit amet convallis cat non disapproval, id eget family brought posuere ligula sapien he somebody nunc metus dui skeptical loved siamese rip the couch nisl.<br />Kitten Ipsum dolor sit amet convallis cat non disapproval, id eget family brought posuere ligula sapien he somebody nunc metus dui skeptical loved siamese rip the couch nisl.<br /></p>
             </div>
           </div>
         </section>
@@ -39,12 +45,12 @@
     </div>
     <footer class='footer'>
       Handcrafted in Southern Oregon by <a href='https://twitter.com/sturdynut' target='_blank'>@sturdynut</a>, 2015.
-      <div class='github-star'>
-        <iframe src="https://ghbtns.com/github-btn.html?user=sturdynut&repo=fadeup&type=star&count=true" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
-      </div>
       <a class='repo' href='https://github.com/sturdynut/fadeUp' target='_blank'>
         <img src='images/github-icon.png' alt='Github Repo' />
       </a>
+      <div class='github-star'>
+        <iframe src="https://ghbtns.com/github-btn.html?user=sturdynut&repo=fadeup&type=star&count=true" frameborder="0" scrolling="0" width="160px" height="30px"></iframe>
+      </div>
     </footer>
   </body>
   <script>
@@ -53,7 +59,7 @@
       // Wire up fadeup
       $('.demo-1').on('click', function() {
         $('.demo-1-to-fade').fadeUp({
-          duration: 500,
+          duration: 400,
           easing: 'swing'
         });
       });

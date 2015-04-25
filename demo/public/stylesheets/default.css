@@ -31,13 +31,14 @@ body {
 h1 {
   color: #fff;
   font-family: 'Merriweather';
-  font-size: 90px;
+  font-size: 100px;
   font-style: italic;
   font-weight: 900;
   letter-spacing: -7px;
   margin: 60px auto 20px auto;
   opacity: 1;
   padding: 0;
+  text-shadow: 2px 2px 1px rgba(0,0,0,0.5);
   -webkit-transition: all 6s;
   transition: all 6s;
   -webkit-animation: animateOpacity 6s 1 ease;
@@ -74,6 +75,11 @@ pre {
   background: #000;
   margin: 0;
 }
+.page-title-link,
+.page-title-link:hover,
+.page-title-link:active {
+  text-decoration: none;
+}
 .code {
   border-radius: 3px;
   color: #fff;
@@ -102,8 +108,8 @@ pre {
   margin: 0 auto;
   outline: none;
   padding: 20px 0;
-  -webkit-transition: all 0.05s;
-  transition: all 0.05s;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
   width: 100%;
 }
 .btn:active,
@@ -132,7 +138,8 @@ pre {
   height: 100%;
 }
 .demo-button {
-  height: 150px;
+  background-color: #000;
+  bottom: 0;
   left: 0;
   position: absolute;
   top: 0;
@@ -200,8 +207,57 @@ pre {
 .footer .repo img {
   width: 25px;
 }
+@media (max-width: 600px) {
+  .footer {
+    font-size: 14px;
+    text-align: center;
+  }
+  .github-star {
+    width: 100px;
+  }
+  .repo {
+    width: 55px;
+  }
+  .github-star, .repo {
+    display: block;
+    margin: 10px auto 15px auto;
+    position: static;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
 .demo-1-to-fade {
   background: url('/images/whistler.jpg') no-repeat center left;
   background-size: cover;
+}
+.demo-1-to-fade h1 {
+  color: #333;
+  background: rgba(255, 255, 255, 0.5);
   padding: 40px;
+  text-shadow: none;
+}
+.demo-1-to-fade h2 {
+  color: #000;
+  font-family: 'Merriweather';
+  font-weight: 900;
+  font-style: italic;
+  line-height: 2;
+  margin: 0 auto;
+  padding: 20px;
+  width: 90%;
+}
+.demo-1-to-fade p {
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 25px;
+  color: #111;
+  line-height: 2;
+  margin: 20px auto;
+  padding: 40px;
+  width: 90%;
+}
+.demo-1-to-fade p img {
+  border-radius: 50%;
+  float: left;
+  margin: 0 20px 10px 0;
+  height: 100px;
 }
