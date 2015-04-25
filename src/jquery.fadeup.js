@@ -1,5 +1,5 @@
 /* * * * * * * * * * * * * * * * * * * * * *
- * Fadeup v.1.0.0
+ * Fadeup v.1.0.3
  * A simple, jQuery plugin for fancy hiding.
  *
  * https://github.com/sturdynut/fadeup
