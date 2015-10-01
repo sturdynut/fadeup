@@ -14,33 +14,52 @@
         <h2>A simple, jQuery plugin for fancy hiding.</h2>
       </header>
       <div class='main-content'>
-        <section class='demo-1-section'>
-          <div class='demo-button'>
-            <button type='button' class='btn demo-1'>
-              DEMO
-            </button>
-            <pre>
-/* * * * * * * * * * * * * * * * *
- * On click of demo button,
- * fade up the content.
- * * * * * * * * * * * * * * * * */
-$('.demo-1').on('click', function() {
-  $('.demo-1-to-fade').fadeUp({
-    duration: 400,
-    easing: 'swing'
-  });
-});
+
+
+        <div class='demo demo--simple'>
+          <div class='demo__title'>
+            <h3>Simple Demo</h3>
+            <h4>A simple example of hiding a section of text.</h4>
+          </div>
+          <div class='demo__content'>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent et erat hendrerit, tincidunt massa ut, aliquam velit. Pellentesque ultrices magna nec massa facilisis interdum. Ut ac nunc bibendum, fermentum tellus a, pellentesque mi. Duis diam ipsum, lacinia at felis et, malesuada facilisis eros. Donec ut ante at turpis viverra dignissim. Cras sed purus sit amet lectus ullamcorper venenatis nec non orci. Aenean a nisl tristique, venenatis magna ut, luctus nibh. Nunc ex massa, tempor vitae felis et, tincidunt tempor sapien.
+            </p>
+          </div>
+        </div>
+        <div class='demo-actions'>
+          <div class='demo-actions__code'>
+          <pre>
+$(selector).fadeUp();
             </pre>
           </div>
-          <div class='demo-content'>
-            <div class='demo-1-to-fade'>
-              <h1>Kitten Ipsum dolor sit amet convallis cat non disapproval.</h1>
-              <h2>Kitten eget family brought posuere ligula sapien he somebody nunc metus dui skeptical loved siamese rip the couch nisl.</h2>
-              <p>
-              <img src='images/cat-icon.png' alt='Kitten' />Kitten Ipsum dolor sit amet convallis cat non disapproval, id eget family brought posuere ligula sapien he somebody nunc metus dui skeptical loved siamese rip the couch nisl.<br />Kitten Ipsum dolor sit amet convallis cat non disapproval, id eget family brought posuere ligula sapien he somebody nunc metus dui skeptical loved siamese rip the couch nisl.<br />Kitten Ipsum dolor sit amet convallis cat non disapproval, id eget family brought posuere ligula sapien he somebody nunc metus dui skeptical loved siamese rip the couch nisl.<br /></p>
-            </div>
+          <button type='button' class='btn btn-simple'>
+              Simple Demo
+          </button>
+        </div>
+
+
+        <div class='demo demo--image'>
+          <div class='demo__title'>
+            <h3>Image Demo</h3>
+            <h4>An example of hiding an image.</h4>
           </div>
-        </section>
+          <div class='demo__content'>
+            <img src='http://lorempixel.com/output/cats-q-c-520-300-5.jpg' alt='Image Demo' />
+          </div>
+        </div>
+        <div class='demo-actions'>
+          <div class='demo-actions__code'>
+          <pre>
+$(selector).fadeUp({ duration: 500 });
+            </pre>
+          </div>
+          <button type='button' class='btn btn-image'>
+              Image Demo
+          </button>
+        </div>
+
+
       </div>
     </div>
     <footer class='footer'>
@@ -57,11 +76,12 @@ $('.demo-1').on('click', function() {
     // On document ready
     $(function() {
       // Wire up fadeup
-      $('.demo-1').on('click', function() {
-        $('.demo-1-to-fade').fadeUp({
-          duration: 400,
-          easing: 'swing'
-        });
+      $('.btn-simple').on('click', function() {
+        $('.demo--simple').fadeUp();
+      });
+
+      $('.btn-image').on('click', function() {
+        $('.demo--image').fadeUp({ duration: 500 });
       });
     })
   </script>

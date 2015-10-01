@@ -3,6 +3,8 @@
  *  - Yellow: #ecc85a;
  *  - Orange: #ec8a5a;
  *  - Blue:   #5aa5ec;
+ *  - White: #F8F6F6;
+ *  - Dark Red: #863720;
  */
 @-webkit-keyframes animateOpacity {
  0% {
@@ -20,7 +22,7 @@ html {
 }
 html,
 body {
-  background-color: #5aa5ec;
+  background-color: #F8F6F6;
   font-family: 'Lato';
   font-weight: 100;
   height: 100%;
@@ -29,42 +31,32 @@ body {
   width: 100%;
 }
 h1 {
-  color: #fff;
+  color: #863720;
   font-family: 'Merriweather';
   font-size: 100px;
   font-style: italic;
   font-weight: 900;
-  letter-spacing: -7px;
+  letter-spacing: -6px;
   margin: 60px auto 20px auto;
   opacity: 1;
   padding: 0;
-  text-shadow: 2px 2px 1px rgba(0,0,0,0.5);
-  -webkit-transition: all 6s;
-  transition: all 6s;
-  -webkit-animation: animateOpacity 6s 1 ease;
-  animation: animateOpacity 6s 1 ease;
+  text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
 }
 h2 {
-  color: #fff;
+  color: #863720;
   font-weight: 300;
   font-size: 25px;
   margin: 0 auto 30px auto;
-  opacity: 1;
-  -webkit-transition: all 12s;
-  transition: all 12s;
-  -webkit-animation: animateOpacity 12s 1 ease;
-  animation: animateOpacity 12s 1 ease;
 }
 h3 {
   color: #fff;
-  font-weight: 100;
-  font-size: 45px;
+  font-size: 28px;
   margin: 0 auto;
-  opacity: 1;
-  -webkit-transition: all 12s;
-  transition: all 12s;
-  -webkit-animation: animateOpacity 12s 1 ease;
-  animation: animateOpacity 12s 1 ease;
+}
+h4 {
+  margin: 5px 0 0;
+  padding: 0;
+  font-size: 18px;
 }
 pre {
   color: #fff;
@@ -96,29 +88,27 @@ pre {
   width: 225px;
 }
 .btn {
-  background: rgba(255,255,255,.2);
-  box-shadow: 3px rgba(0,0,0,0.2);
+  background: #863720;
   border-style: none;
   color: #fff;
   cursor: pointer;
-  display: inline-block;
+  display: block;
   font-family: 'Lato';
-  font-size: 20px;
+  font-size: 14px;
   font-weight: 100;
   margin: 0 auto;
   outline: none;
-  padding: 20px 0;
+  padding: 10px 15px;
   -webkit-transition: all 0.3s;
   transition: all 0.3s;
-  width: 100%;
 }
 .btn:active,
 .btn:hover {
-  background: #ec8a5a;
+  background: #9E452B;
   outline: none;
 }
 .btn:active {
-  background: #ecc85a;
+  background: #D74031;
 }
 .container {
   height: 100%;
@@ -129,47 +119,52 @@ pre {
 }
 .main-content {
   background: rgba(255,255,255,.2);
-  height: 100%;
-  overflow: hidden;
+  height: 100vh;
   position: relative;
 }
-.demo-1-to-fade,
-.demo-1-section {
-  height: 100%;
+
+.demo {
+  background-color: #514E49;
+  color: #F8F6F6;
+  max-width: 520px;
+  width: 100%;
+  margin: 0 auto;
 }
-.demo-button {
-  background-color: #000;
-  bottom: 0;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 350px;
+
+.demo__title {
+  padding: 20px 20px 0;
 }
-.demo-content {
-  height: 100%;
-  margin-left: 350px;
+
+.demo--image .demo__title {
+  padding-bottom: 20px;
 }
-@media (max-width: 600px) {
-  .demo-button {
-    height: auto;
-    position: static;
-    width: 100%;
-  }
-  .demo-content {
-    margin-left: 0;
-  }
+
+.demo__content {
+  font-size: 14px;
+  line-height: 2;
+  padding: 20px 40px;
+  text-align: justify;
 }
-.demo-content h1,
-.demo-content h2,
-.demo-content p {
-  color: #111;
-  margin-bottom: 10px;
-  margin-top: 0;
+
+.demo--image .demo__content {
+  padding: 0;
 }
-.demo-content h1 {
-  font-size: 45px;
-  letter-spacing: normal;
+
+.demo-actions {
+  display: flex;
+  max-width: 520px;
+  width: 100%;
+  margin: 0 auto 40px auto;
 }
+
+.demo-actions .btn {
+  width: 120px;
+}
+
+.demo-actions__code {
+  flex: 1;
+}
+
 .footer {
   background-color: #fff;
   bottom: 0;
@@ -225,39 +220,4 @@ pre {
     -webkit-transform: none;
     transform: none;
   }
-}
-.demo-1-to-fade {
-  background: url('/images/whistler.jpg') no-repeat center left;
-  background-size: cover;
-}
-.demo-1-to-fade h1 {
-  color: #333;
-  background: rgba(255, 255, 255, 0.5);
-  padding: 40px;
-  text-shadow: none;
-}
-.demo-1-to-fade h2 {
-  color: #000;
-  font-family: 'Merriweather';
-  font-weight: 900;
-  font-style: italic;
-  line-height: 2;
-  margin: 0 auto;
-  padding: 20px;
-  width: 90%;
-}
-.demo-1-to-fade p {
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 25px;
-  color: #111;
-  line-height: 2;
-  margin: 20px auto;
-  padding: 40px;
-  width: 90%;
-}
-.demo-1-to-fade p img {
-  border-radius: 50%;
-  float: left;
-  margin: 0 20px 10px 0;
-  height: 100px;
 }
