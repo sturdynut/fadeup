@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Fadeup by sturdynut</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Fadeup</h1>
+        <p>A simple, jQuery plugin for fancy hiding</p>
+
+        <p class="view"><a href="https://github.com/sturdynut/fadeup">View the Project on GitHub <small>sturdynut/fadeup</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/sturdynut/fadeup/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/sturdynut/fadeup/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/sturdynut/fadeup">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="fadeup" class="anchor" href="#fadeup" aria-hidden="true"><span class="octicon octicon-link"></span></a>FadeUp</h1>
+
+<p>A simple, jQuery plugin for fancy hiding.</p>
+
+<h2>
+<a id="demo" class="anchor" href="#demo" aria-hidden="true"><span class="octicon octicon-link"></span></a>Demo</h2>
+
+<p><a href="http://fadeup.herokuapp.com/">Live demo here</a></p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<pre><code>$(...).fadeUp();
+
+// or
+
+$(...).fadeUp(function(collapsed) {
+  // Do things
+});
+
+// or
+
+$(...).fadeUp({
+  duration: 5000,
+  easing:   'swing'
+}, function(collapsed) {
+  // Do things
+});
+</code></pre>
+
+<h3>
+<a id="example" class="anchor" href="#example" aria-hidden="true"><span class="octicon octicon-link"></span></a>Example</h3>
+
+<pre><code>&lt;button type='button' class='btn'&gt;Go&lt;/button&gt;
+&lt;div class='content'&gt;
+  ...
+&lt;/div&gt;
+
+&lt;script&gt;
+  $(function() {
+    $('.btn').on('click', function() {
+      $('.content').fadeUp();
+    });
+  });
+&lt;/script&gt;
+</code></pre>
+
+<h2>
+<a id="install" class="anchor" href="#install" aria-hidden="true"><span class="octicon octicon-link"></span></a>Install</h2>
+
+<p>Install via bower, npm or copy from the <code>dist</code> directory.</p>
+
+<h3>
+<a id="bower" class="anchor" href="#bower" aria-hidden="true"><span class="octicon octicon-link"></span></a>Bower:</h3>
+
+<pre><code>bower install fadeup
+</code></pre>
+
+<h3>
+<a id="npm" class="anchor" href="#npm" aria-hidden="true"><span class="octicon octicon-link"></span></a>NPM:</h3>
+
+<pre><code>npm install fadeup
+</code></pre>
+
+<h3>
+<a id="copy--pasta" class="anchor" href="#copy--pasta" aria-hidden="true"><span class="octicon octicon-link"></span></a>Copy / Pasta:</h3>
+
+<ul>
+<li><a href="https://github.com/sturdynut/fadeUp/raw/master/dist/jquery.fadeup.js">jquery.fadeup.js</a></li>
+<li><a href="https://github.com/sturdynut/fadeUp/raw/master/dist/jquery.fadeup.min.js">jquery.fadeup.min.js</a></li>
+<li><a href="https://github.com/sturdynut/fadeUp/raw/master/dist/jquery.fadeup.min.js.map">jquery.fadeup.min.js.map</a></li>
+</ul>
+
+<h2>
+<a id="browser-support" class="anchor" href="#browser-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Browser Support</h2>
+
+<p>Chrome, Safari, Firefox, IE 9+</p>
+
+<h2>
+<a id="velocity-integration" class="anchor" href="#velocity-integration" aria-hidden="true"><span class="octicon octicon-link"></span></a>Velocity Integration</h2>
+
+<p><a href="http://julian.com/research/velocity/">Velocity</a> will be used if available.  You don't have to do anything, if it is there, it uses it.  #winning.</p>
+
+<h2>
+<a id="issues" class="anchor" href="#issues" aria-hidden="true"><span class="octicon octicon-link"></span></a>Issues?</h2>
+
+<p>Please submit any issues <a href="https://github.com/sturdynut/fadeUp/issues">here</a>.</p>
+
+<h2>
+<a id="questions" class="anchor" href="#questions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Questions?</h2>
+
+<p>Hit me up on twitter <a href="https://twitter.com/sturdynut">@sturdynut</a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/sturdynut">sturdynut</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
